@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card Details Form</title>
+
+    <!-- Local static -->
+    <!-- css -->
+    <link rel="stylesheet" href="./public/css/build/style.css">
+
+    <!-- js -->
+    <script defer>
+        const goBack = document.getElementById('goBack')
+        function redirect() {
+            window.location.href = '/'
+        }
+    </script>
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- ================================================ -->
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 style="display: none;">PaymentPage</h1>
+        </header>
+        <!--/ Header -->
+
+        <main class="content-page">
+            <section class="first-column" role="information-card-preview">
+                <div class="card-preview back" role="card-back" aria-labelledby="cardBack">
+                    <p id="cvc">000</p>
+                </div>
+                <div class="card-preview front" role="card-front" aria-labelledby="cardFront">
+                    <img src="./public/images/card-logo.svg" alt="White Ball Card logo" class="icon-card" />
+                    <div class="package">
+                        <p class="cardnumber-prev" id="cardNumberPrev">0000 0000 0000 0000</p>
+                        <div class="clip">
+                            <span class="item-prev" id="holder">Jane Appleseed</span>
+                            <div>
+                                <span class="item-prev" id="expDateMonthPrev">00</span>
+                                <span class="item-prev">/</span>
+                                <span class="item-prev" id="expDateYearPrev">00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="second-column">
+                <div class="form">
+                    <div class="complete">
+                        <img src="./public/images/icon-complete.svg" alt="" srcset="">
+                        <p>THANK YOU!</p>
+                        <p>We've added your card details</p>
+                    </div>
+                    <button onclick="redirect()" class="goBack">OK!</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- /.container -->
+
+</body>
+
+</html>

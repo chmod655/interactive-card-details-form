@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card Details Form</title>
+    <script src="https://kit.fontawesome.com/99e06e7c0a.js" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="./public/images/favicon-32x32.png" type="image/x-icon">
+
+    <!-- Local static -->
+    <!-- css -->
+    <link rel="stylesheet" href="./public/css/build/style.css">
+
+    <!-- js -->
+    <script src="./public/js/script.js" defer></script>
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- ================================================ -->
+</head>
+
+<body>
+    <section class="container-modal" id="modal">
+        <div class="modal" id="modalbox">
+            <p id="title">A Small Message, Visitor!</p>
+            <p id="desc">This is a challange from <a href=""><em>FrontEndMentor</em></a></p>
+            <p id="social">My <a href="https://github.com/chmod655">
+                    <em>GitHub <i class="fa-sharp fa-solid fa-dragon"></i></em>
+                </a></p>
+
+                <div class="buttons">
+                    <button id="goToGit">Yep am will see :)</button>
+                    <button id="closeModal">Close</button>
+                </div>
+        </div>
+    </section>
+    <div class="container">
+        <header>
+            <h1 style="display: none;">PaymentPage</h1>
+        </header>
+        <!--/ Header -->
+
+        <main class="content-page">
+            <section class="first-column" role="information-card-preview">
+                <div class="card-preview back" role="card-back" aria-labelledby="cardBack">
+                    <p id="cvc">000</p>
+                </div>
+                <div class="card-preview front" role="card-front" aria-labelledby="cardFront">
+                    <img src="./public/images/card-logo.svg" alt="White Ball Card logo" class="icon-card" />
+                    <div class="package">
+                        <p class="cardnumber-prev" id="cardNumberPrev">0000 0000 0000 0000</p>
+                        <div class="clip">
+                            <span class="item-prev" id="holder">Jane Appleseed</span>
+                            <div>
+                                <span class="item-prev" id="expDateMonthPrev">00</span>
+                                <span class="item-prev">/</span>
+                                <span class="item-prev" id="expDateYearPrev">00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="second-column">
+                <form class="form" action="/complete.html" method="get" role="form-payment">
+                    <div class="form-content">
+                        <label for="cardholder">cardholder name</label>
+                        <div class="pkg">
+                            <input id="cardHolder" role="cardholder" aria-labelledby="cardholder" name="cardholder"
+                                class="input-form" type="text" maxlength="32" minlength="8"
+                                placeholder="e.g. Jane Appleseed" required autocomplete="off">
+                            <p id="alertHolder"></p>
+                        </div>
+
+                        <label for="cardholder"> cardnumber</label>
+                        <div class="pkg">
+                            <input id="cardNumber" role="cardnumber" aria-labelledby="cardnumber" name="cardnumber"
+                                class="input-form" type="text" minlength="16" maxlength="16"
+                                placeholder="e.g. 1234 5678 9123 0000" required autocomplete="off">
+                            <p id="alertNumber"></p>
+                        </div>
+
+                        <p class="expCode">Exp. Date(mm/yy)</p>
+                        <p class="expCode">cvc</p>
+                        <div class="clear"></div>
+                        <!-- ExpDate and CVCcode -->
+                        <div class="wrapper">
+
+                            <div class="pkg">
+                                <input role="cardExpDateMonth" aria-labelledby="cardExpDateMonth" name="month"
+                                    id="expDateMonth" class="input-form" type="text" minlength="2" maxlength="2"
+                                    placeholder="MM" required autocomplete="off">
+                                <p id="alertDateMonth"></p>
+                            </div>
+                            <div class="pkg">
+                                <input role="cardExpDateYear" aria-labelledby="cardExpDateYear" name="year"
+                                    class="input-form" type="text" minlength="2" maxlength="2" placeholder="YY" required
+                                    id="expDateYear" autocomplete="off">
+                                <p id="alertDateYear"></p>
+                            </div>
+                            <div class="pkg">
+                                <input role="cardCodeVerify" aria-labelledby="cardCodeVerify" name="cvc"
+                                    class="input-form" type="text" minlength="3" maxlength="3" placeholder="e.g. 123"
+                                    id="cardCode" required autocomplete="off">
+                                <p id="alertCode"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <button name="submitButton" id="submitBtn" type="submit">Confirm</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+    <!-- /.container -->
+
+</body>
+
+</html>
